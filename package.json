@@ -1,0 +1,105 @@
+{
+    "name": "mall-wxapp",
+    "version": "3.8.21",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "lint-staged",
+        "ci-lint": "gulp --gulpfile ./ci/lint-report.js --cwd ./",
+        "pretty": "prettier --write \"src/**/*.js\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@git.sankuai.com/octopus/mall-wxapp.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/runtime": "^7.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/plugin-external-helpers": "^7.2.0",
+        "@babel/plugin-proposal-class-properties": "^7.2.1",
+        "@babel/plugin-proposal-decorators": "^7.2.0",
+        "@babel/plugin-proposal-do-expressions": "^7.2.0",
+        "@babel/plugin-proposal-export-default-from": "^7.2.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+        "@babel/plugin-proposal-function-bind": "^7.2.0",
+        "@babel/plugin-proposal-function-sent": "^7.2.0",
+        "@babel/plugin-proposal-json-strings": "^7.2.0",
+        "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.2.0",
+        "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+        "@babel/plugin-proposal-pipeline-operator": "^7.2.0",
+        "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-syntax-import-meta": "^7.2.0",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.2.0",
+        "@babel/register": "^7.0.0",
+        "@types/core-js": "^2.5.0",
+        "@types/jest": "^23.3.10",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^23.6.0",
+        "babel-plugin-module-resolver": "^3.1.1",
+        "babel-plugin-transform-decorators-legacy": "^1.3.5",
+        "eslint": "^5.9.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-config-prettier": "^3.3.0",
+        "eslint-html-reporter": "^0.5.2",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-jest": "^22.1.2",
+        "husky": "^1.2.0",
+        "jest": "^23.6.0",
+        "lint-staged": "^8.1.0",
+        "nyc": "^13.1.0",
+        "opn": "^5.4.0",
+        "pify": "^4.0.1",
+        "prettier": "^1.15.2",
+        "regenerator-runtime": "^0.13.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "ava": {
+        "files": [
+            "test/**/*.js"
+        ],
+        "source": [
+            "src/**/*.{js,jsx}",
+            "test/*.js",
+            "!dist/**/*",
+            "!node_modules/**/*"
+        ],
+        "match": [
+            "*",
+            "!foo"
+        ],
+        "concurrency": 5,
+        "failFast": true,
+        "failWithoutAssertions": false,
+        "tap": true,
+        "powerAssert": false,
+        "require": [
+            "@babel/register",
+            "babel-polyfill"
+        ],
+        "babel": "inherit"
+    },
+    "engines": {
+        "node": ">=8.0.0"
+    }
+}
