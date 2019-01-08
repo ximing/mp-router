@@ -1,9 +1,10 @@
 {
-    "name": "mall-wxapp",
-    "version": "3.8.21",
+    "name": "mp-router",
+    "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
+        "build": "export NODE_ENV=production rimraf dist && babel src --out-dir dist",
         "lint": "lint-staged",
         "ci-lint": "gulp --gulpfile ./ci/lint-report.js --cwd ./",
         "pretty": "prettier --write \"src/**/*.js\""
@@ -15,7 +16,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@babel/runtime": "^7.2.0"
+        "@babel/runtime": "^7.2.0",
+        "querystring": "^0.2.0",
+        "url": "^0.11.0"
     },
     "devDependencies": {
         "@babel/core": "^7.2.0",
@@ -60,7 +63,8 @@
         "opn": "^5.4.0",
         "pify": "^4.0.1",
         "prettier": "^1.15.2",
-        "regenerator-runtime": "^0.13.1"
+        "regenerator-runtime": "^0.13.1",
+        "rimraf": "^2.6.3"
     },
     "husky": {
         "hooks": {

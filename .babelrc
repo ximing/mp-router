@@ -13,12 +13,6 @@
     ]
   ],
   "ignore": [
-    "src/login/authrize/**/*",
-    "src/login/npm/**/*",
-    "src/login/subpages/**/*",
-    "src/login_mmp/*",
-    "src/login/index.js",
-    "src/login/urls.js"
   ],
   "comments": false,
   "env": {

@@ -1,7 +1,0 @@
-src/login
-src/login_mmp
-src/lib/npm/**/*.js
-src/lib/wxapp-mobx/**/*.js
-src/lib/wxParse/**/*.js
-src/lib/acorn.js
-src/lib/evaljs.js

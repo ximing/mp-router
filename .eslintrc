@@ -25,6 +25,7 @@
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error",
         "no-shadow": "off",
+        "no-unused-vars": "off",
         "calemcase": "off",
         "class-methods-use-this": "off",
         "consistent-return": "off",
