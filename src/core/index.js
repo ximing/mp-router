@@ -13,6 +13,8 @@ export default class Router {
         this.rootUriHandle = rootUriHandle;
     }
 
-    goto(uriRequest) {}
+    async goto(uriRequest) {
+        this.rootUriHandle.handle(uriRequest);
+    }
 }
 export { UriRequest, UriInterceptor, UriHandle, Response, RESPONSE_CODE, url };

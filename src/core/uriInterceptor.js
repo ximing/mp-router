@@ -5,4 +5,6 @@ export default class UriInterceptor {
     constructor(name) {
         this.name = name;
     }
+
+    async exec(uriRequest) {}
 }
